@@ -1,5 +1,6 @@
 package com.example.cicd;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MainController {
 
+    @Autowired
+    private IndexService indexService;
+
     @GetMapping("/")
     public String index() {
         return "hello ";
@@ -17,7 +21,7 @@ public class MainController {
 
     @GetMapping("/add")
     public int test(int a, int b) {
-        return a + b;
+        return indexService.add(a, b);
     }
 
 }
