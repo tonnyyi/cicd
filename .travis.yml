@@ -1,0 +1,7 @@
+language: java
+
+before_script:
+  - mvn test
+  
+script:
+  - mvn package -Dmaven.test.skip=true
