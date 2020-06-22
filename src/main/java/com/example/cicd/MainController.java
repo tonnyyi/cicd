@@ -16,7 +16,7 @@ public class MainController {
 
     @GetMapping("/")
     public String index() {
-        return "hello springframework";
+        return "hello spring boot";
     }
 
     @GetMapping("/add")
